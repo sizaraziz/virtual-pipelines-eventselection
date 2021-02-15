@@ -67,4 +67,9 @@ jobs:
 
       - run: python histograms.py skim_ggH.root ggH hist_ggH.root
 
+      - uses: actions/upload-artifact@v2
+        with:
+          name: hist_ggH
+          path: hist_ggH.root
+
 # does download artifact work without checkout repository?
