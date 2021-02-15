@@ -5,3 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo hello world
+
+  build_skim:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        run: |
+          COMPILER=$(root-config --cxx)
+          $COMPILER -g -O3 -Wall -Wextra -Wpendantic -o skim skim.cxx
+
+# M-x electric-indent-mode to enable/disable auto indentation
